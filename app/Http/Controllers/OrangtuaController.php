@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\orangtuas;
 
 class OrangtuaController extends Controller
 {
@@ -14,6 +15,8 @@ class OrangtuaController extends Controller
     public function index()
     {
         //
+        $ortu = orangtuas::with('anak')->get();
+        return view('orangtua.index', compact('ortu'));
     }
 
     /**
@@ -24,6 +27,7 @@ class OrangtuaController extends Controller
     public function create()
     {
         //
+        return view('orangtua.create');
     }
 
     /**
@@ -35,6 +39,18 @@ class OrangtuaController extends Controller
     public function store(Request $request)
     {
         //
+        $ortu = new orangtuas;
+        $ortu ->nama_ayah = $request->a;
+        $ortu ->nama_ibu = $request->b;
+        $ortu ->umur_ibu = $request->c;
+        $ortu ->umur_ayah = $request->d;
+        $ortu ->alamat= $request->e;
+        $ortu ->save();
+         return redirect('orangtua');
+
+
+
+
     }
 
     /**
@@ -46,6 +62,8 @@ class OrangtuaController extends Controller
     public function show($id)
     {
         //
+        $ortu = orangtuas::findorFail($id);
+        return view('orangtua.show', compact('ortu'));
     }
 
     /**
@@ -57,6 +75,8 @@ class OrangtuaController extends Controller
     public function edit($id)
     {
         //
+        $ortu = orangtuas::findorFail($id);
+        return view('orangtua.edit', compact('ortu'));
     }
 
     /**
@@ -69,6 +89,16 @@ class OrangtuaController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $ortu = orangtuas::findorFail($id);
+        $ortu ->nama_ayah = $request->a;
+        $ortu ->nama_ibu = $request->b;
+        $ortu ->umur_ibu = $request->c;
+        $ortu ->umur_ayah = $request->d;
+        $ortu ->alamat= $request->e;
+        $ortu ->save();
+         return redirect('orangtua');
+
+
     }
 
     /**
@@ -80,5 +110,9 @@ class OrangtuaController extends Controller
     public function destroy($id)
     {
         //
+            $ortu = orangtuas::findOrFail($id);
+            $ortu ->delete();
+            return redirect('orangtua');
+
     }
 }
