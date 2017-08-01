@@ -1,9 +1,9 @@
 @extends('layouts.app')
 @section ('content')
 <div class="row">
-	<center><h1>data orang tua</h1></center>
+	<center><h1>Data Orang Tua</h1></center>
 	<div class="panel panel-primary">
-	<div class="panel-heading">data orang tua
+	<div class="panel-heading">Data Orang Tua
 <div class="panel-title pull-right">
 	<a href="{{ URL::previous() }}">kembali</a></div></div>
 </div>
@@ -14,24 +14,24 @@
 		<input type="hidden" name="_token" value="{{csrf_token()}}">
 			<div class="form-group">
 
-				<label class="control-lable">nama ayah</label>
+				<label class="control-lable">Nama ayah</label>
 				<input type="text" name="a" value="{{$ortu->nama_ayah}}" class="form-control" required="">
 				</div>
 				<div class="form-group">
-				<label class="control-lable">nama ibu</label>
+				<label class="control-lable">Nama ibu</label>
 				<input type="text" name="b" value="{{$ortu->nama_ibu}}" class="form-control" required="">
                 </div>
                 <div class="form-group">
-				<label class="control-lable">umur ayah</label>
+				<label class="control-lable">Umur ayah</label>
 				<input type="text" name="c" value="{{$ortu->umur_ayah}}" class="form-control" required="">
                  </div>
 
                 <div class="form-group">
-				<label class="control-lable">umur ibu</label>
+				<label class="control-lable">Umur ibu</label>
 				<input type="text" name="d" value="{{$ortu->umur_ibu}}" class="form-control" required="">
                  </div>
                     <div class="form-group">
-				<label class="control-lable">alamat</label>
+				<label class="control-lable">Alamat</label>
 				<textarea class="form-control" rows="10" name="e" required="">
 				{{$ortu->alamat}}</textarea>
                  </div>

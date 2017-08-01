@@ -1,12 +1,13 @@
 @extends('layouts.app')
 @section('content')
+<div class="container">
 <div class="row">
 	<center><h1>Data orang tua</h1></center>
 	<div class="panel panel-primary">
 		<div class="panel-heading">data orang tua
 		<div class="panel-title pull-right"><a href="/orangtua/create">tambah data</a>
 		</div>
-		</div>
+		</div></div>
 		<div class="panel-body">
 			<table class="table">
 				<thead>

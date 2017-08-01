@@ -41,3 +41,5 @@ Route::resource('/orangtua','OrangtuaController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('/anak','AnakController');
